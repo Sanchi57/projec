@@ -14,6 +14,10 @@ const ProductDetails = ({match = { params: {} }}) => {
         dispatch(getProductDetails(match.params.id))
     }, [dispatch, match.params.id]);
 
+    if (!product) {
+        return <h1>Product not found</h1>
+    }
+
     return (
         <Fragment>
             <div className='ProductDetails'>
